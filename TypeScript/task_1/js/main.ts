@@ -12,12 +12,11 @@ interface Directors extends Teacher {
 }
 
 interface printTeacherFunction {
-  printTeacher: (firstName: string, lastName: string) => string;
+  (firstName: string, lastName: string): void;
 }
 
-function printTeacher(firstName: string, lastName: string) {
+const printTeacher: printTeacherFunction = (firstName: string, lastName: string) =>
   console.log(`${firstName.substring(0, 1)}. ${lastName}`);
-}
 
 const teacher1: Teacher = {
   firstName: 'Bob',
