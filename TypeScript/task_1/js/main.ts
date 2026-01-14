@@ -18,6 +18,39 @@ interface printTeacherFunction {
 const printTeacher: printTeacherFunction = (firstName: string, lastName: string) =>
   console.log(`${firstName.substring(0, 1)}. ${lastName}`);
 
+
+interface StudentConstructor {
+  new(firstName: string, lastName: string): StudentInterface;
+}
+
+interface StudentInterface {
+  workOnHomework(): void;
+  displayName(): void;
+}
+
+function createStudent(
+  ctor: StudentConstructor,
+  firstName: string,
+  lastName: string
+): StudentInterface {
+  return new ctor(firstName, lastName);
+}
+
+class StudentClass implements StudentInterface {
+  firstName: string;
+  lastName: string;
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  workOnHomework() {
+    console.log('Currently working');
+  }
+  displayName() {
+    console.log(`${this.firstName}`);
+  }
+}
+
 const teacher1: Teacher = {
   firstName: 'Bob',
   fullTimeEmployee: true,
@@ -33,6 +66,10 @@ const director1: Directors = {
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
+
+let student1 = createStudent(StudentClass, 'Greta', 'Thunberg');
+student1.workOnHomework();
+student1.displayName();
 
 console.log(director1);
 console.log(teacher1);
