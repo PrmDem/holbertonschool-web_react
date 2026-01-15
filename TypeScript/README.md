@@ -11,7 +11,7 @@ After learning to use JavaScript, these tasks from the Holberton School curricul
 
 ## General Information
 __Number of tasks:__ 11<br/>
-__Completed:__ TBA<br/>
+__Completed:__ 9<br/>
 __Passed:__ TBA<br/>
 
 ## Tasks Overview
@@ -45,3 +45,26 @@ This was implemented by editing task_1's [main.ts](./task_1/js/main.ts) file.
 #### 3. Printing teachers
 In a `printTeacherFunction` interface, write a function `printTeacher` that accepts `firstName` and `lastName` as arguments. It should return the initial of `firstName` and the full `lastName`.<br/>
 See task_1's [main.ts](./task_1/js/main.ts) file.
+
+#### 4. Writing a class
+Write a Class named StudentClass which has two methods: `workOnHomework` (returns string "_Currently working_") and displayName (returns student's `firstName`). The class constructor accepts the arguments `firstName(string)` and `lastName(string)` and should be described through an interface.<br/>
+See task_1's [main.ts](./task_1/js/main.ts) file.
+
+#### 5. Advanced types Part 1
+Two classes, `Teacher` and `Director`, will be created via their respective `Interface`. Both will have the methods `workFromHome()` and `getCoffeeBreak()`, as well as a '`work{JOB}Tasks`' method. Then a function `createEmployee`, which accepts the argument `salary` (number or string), will return either a `Director` or a `Teacher` instance depending on salary. If it is a number and less than 500, the function will return a new Teacher; otherwise it will return a Director.<br/>
+See directory [task_2](./task_2)
+
+#### 6. Creating functions specific to employees
+Add functions `isDirector` and `executeWork`, which both take the argument `employee`(Teacher | Director). Using type predicates, `isDirector` helps us validate which version of `work{JOB}Tasks` to return, depending on the class `employee` is an instance of.<br/>
+See task_2's [main.ts](./task_2/js/main.ts) file.
+
+#### 7. String literal types
+Write a String literal type named `Subjects` allowing a variable to have the value `Math` or `History` only. Then, write a function named `teachClass` that takes `todayClass` as an argument. It will return the string "_Teaching Math_" if `todayClass` is `Math`, "_Teaching History_" if `todayClass` is `History`.<br/>
+See task_2's [main.ts](./task_2/js/main.ts) file.
+
+#### 8. Ambient Namespaces
+Link several files together to use the crud.js library.<br/>
+See directory [task_3](./task_3)
+
+#### 9. Namespace & Declaration merging
+See directory [task_4](./task_4)
