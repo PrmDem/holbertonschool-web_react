@@ -1,36 +1,36 @@
 interface DirectorInterface {
-  workFromHome(): string;
-  getCoffeeBreak(): string;
-  workDirectorTasks(): string;
+  workFromHome(): void;
+  getCoffeeBreak(): void;
+  workDirectorTasks(): void;
 }
 
 interface TeacherInterface {
-  workFromHome(): string;
-  getCoffeeBreak(): string;
-  workTeacherTasks(): string;
+  workFromHome(): void;
+  getCoffeeBreak(): void;
+  workTeacherTasks(): void;
 }
 
 class Director implements DirectorInterface {
   workFromHome() {
-    return ("Working from home");
+    console.log("Working from home");
   }
   getCoffeeBreak() {
-    return ("Getting a coffee break");
+    console.log("Getting a coffee break");
   }
   workDirectorTasks() {
-    return ("Getting to director tasks");
+    console.log("Getting to director tasks");
   }
 }
 
 class Teacher implements TeacherInterface {
   workFromHome() {
-    return ("Cannot work from home");
+    console.log("Cannot work from home");
   }
   getCoffeeBreak() {
-    return ("Cannot have a break");
+    console.log("Cannot have a break");
   }
   workTeacherTasks() {
-    return ("Getting to work");
+    console.log("Getting to work");
   }
 }
 
@@ -41,9 +41,17 @@ function createEmployee(salary: number | string): Director | Teacher {
   return new Director;
 }
 
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee('$500'));
-console.log(createEmployee('401k'));
-console.log(createEmployee('$1'));
-console.log(createEmployee(1));
+function isDirector(employee: Director | Teacher): employee is Director {
+  return (employee as Director).workDirectorTasks !== undefined;
+}
+
+function executeWork(employee: Director | Teacher) {
+  if (isDirector(employee)) {
+    employee.workDirectorTasks();
+  } else {
+    employee.workTeacherTasks();
+  }
+}
+
+executeWork(createEmployee(200));
+executeWork(createEmployee(2000));
