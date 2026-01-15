@@ -53,5 +53,17 @@ function executeWork(employee: Director | Teacher) {
   }
 }
 
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: Subjects): void {
+  if (todayClass === 'Math') {
+    console.log('Teaching Math');
+  } else {
+    console.log('Teaching History');
+  }
+}
+
 executeWork(createEmployee(200));
 executeWork(createEmployee(2000));
+teachClass('Math');
+teachClass('History');
