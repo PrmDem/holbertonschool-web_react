@@ -11,7 +11,7 @@ After learning to use JavaScript, these tasks from the Holberton School curricul
 
 ## General Information
 __Number of tasks:__ 11<br/>
-__Completed:__ 9<br/>
+__Completed:__ 11<br/>
 __Passed:__ TBA<br/>
 
 ## Tasks Overview
@@ -63,8 +63,13 @@ Write a String literal type named `Subjects` allowing a variable to have the val
 See task_2's [main.ts](./task_2/js/main.ts) file.
 
 #### 8. Ambient Namespaces
-Link several files together to use the crud.js library.<br/>
+Link several files together to use the `crud.js` library.<br/>
 See directory [task_3](./task_3)
 
 #### 9. Namespace & Declaration merging
+Using several files, create a namespace `Subjects` that can check whether a named teacher has experience teaching a programming language.<br/>
 See directory [task_4](./task_4)
+
+#### 10. Brand convention & Nominal typing
+Create interfaces `MajorCredits` and `MinorCredits` that each define a number named `credits`. A brand property must be used to uniquely identify these `credits`. Then, implement functions `sumMajorCredits` and `sumMinorCredits`, which take arguments `subject1` and `subject2` to return `Major-` or `MinorCredits` value, which is the sum of the credits for `subject1` and `subject2`.<br/>
+See directory [task_5](./task_5)
